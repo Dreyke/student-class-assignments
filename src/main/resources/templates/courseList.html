@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All Courses</title>
+</head>
+<body>
+
+<h1>All of your courses</h1>
+
+<h2 th:text="${courses.size() } + ' course(s) in progress' ">Course List</h2>
+
+<ul>
+    <li th:each="course : ${courses}">
+        <span th:text="${course.name}"></span>
+    </li>
+</ul>
+
+<a href="/">Add a new course</a>
+</body>
+</html>

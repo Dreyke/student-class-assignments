@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Courses</title>
+</head>
+<body>
+
+<h1>Enter a course</h1>
+
+<form action="#" method="POST" th:action="@{/addCourse}" th:object="${course}">
+    <input type="text" placeholder="Course Name" th:field="*{name}" />
+    <br>
+    <button id="add-course">Add Course</button>
+</form>
+
+<a href="/allCourses">All Courses</a>
+
+</body>
+</html>
