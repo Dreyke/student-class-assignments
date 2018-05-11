@@ -2,20 +2,40 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>All Courses</title>
+    <title>Courses</title>
+
 </head>
 <body>
 
-<h1>All of your courses</h1>
+    <div class="container">
 
-<h2 th:text="${courses.size() } + ' course(s) in progress' ">Course List</h2>
+        <h1>Courses</h1>
 
-<ul>
-    <li th:each="course : ${courses}">
-        <span th:text="${course.name}"></span>
-    </li>
-</ul>
+        <p>
+            <a href="/courseEdit" th:href="@{/courseEdit}">Create</a>
+        </p>
 
-<a href="/">Add a new course</a>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Course Name</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="courses : $(courseList)">
+                <td th:text="${course.id}">1</td>
+                <td th:text="${course.name}">Test</td>
+                <td>
+                    <a href="/courseEdit/1" th:href="@{/courseEdit/__${notes.id}__}">Edit</a>
+                    <a href="/courseDelete/1" th:href="@{/courseDelete/__${notes.id}__}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
 </body>
 </html>

@@ -1,8 +1,9 @@
-package com.dreyke.studentclassassignments.model;
+package com.dreyke.studentclassassignments.controller;
 
 import javax.persistence.*;
 import java.util.Date;
 
+/* declares domain class as an entity/object we want to store in database */
 @Entity
 public class Course {
 
@@ -16,6 +17,22 @@ public class Course {
     private Date dueDate;
 
     public Course() { }
+
+    public Course(String name, String instructor, String assignment, String description, Date dueDate) {
+        this.name = name;
+        this.instructor = instructor;
+        this.assignment = assignment;
+        this.description = description;
+        this.dueDate = dueDate;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -55,17 +72,5 @@ public class Course {
 
     public void setDueDate(Date dueDate) {
         this.dueDate = dueDate;
-    }
-
-    @Override
-    public String toString() {
-        return "Course{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", instructor='" + instructor + '\'' +
-                ", assignment='" + assignment + '\'' +
-                ", description='" + description + '\'' +
-                ", dueDate=" + dueDate +
-                '}';
     }
 }

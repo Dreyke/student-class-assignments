@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div class="container">
+
+        <h1>Courses</h1>
+
+        <form class="form-group" action="/courseEdit" th:action="@{/courseEdit}" method="post">
+            <input th:type="hidden" name="id" th:field="${course.id}" />
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" th:field="${course.name}" />
+            </div>
+            <div class="form-group">
+                <label for="content">Course Description</label>
+                <textarea class="form-control" id="content" th:field="${course.description}"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a href="#" th:href="@{/}" class="btn btn-danger" role="button">Cancel</a>
+        </form>
+    </div>
+
+</body>
+</html>
