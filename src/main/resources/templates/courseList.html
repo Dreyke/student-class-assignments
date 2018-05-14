@@ -21,7 +21,10 @@
             <tr>
                 <th>ID</th>
                 <th>Course Name</th>
-                <th>Course Description</th>
+                <th>Course Instructor</th>
+                <th>Assignment</th>
+                <th>Description/Topic</th>
+                <th>Due Date</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -29,7 +32,10 @@
             <tr th:each="courses : ${courseList}">
                 <td th:text="${course.id}"></td>
                 <td th:text="${course.name}"></td>
+                <td th:text="${course.instructor}"></td>
+                <td th:text="${course.assignment}"></td>
                 <td th:text="${course.description}"></td>
+                <td th:text="${course.dueDate}"></td>
                 <td>
                     <a href="/courseEdit/" th:href="@{/courseEdit/__${course.id}__}">Edit</a>
                     <a href="/courseDelete/" th:href="@{/courseDelete/__${course.id}__}">Delete</a>
