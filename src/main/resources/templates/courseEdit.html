@@ -21,12 +21,12 @@
 
             <div class="form-group">
                 <label for="content">Instructor</label>
-                <textarea class="form-control" id="instructor" th:field="${courses.instructor}"></textarea>
+                <input type="text" class="form-control" id="instructor" th:field="${courses.instructor}"/>
             </div>
 
             <div class="form-group">
                 <label for="content">Assignment</label>
-                <textarea class="form-control" id="assignment" th:field="${courses.assignment}"></textarea>
+                <input type="text" class="form-control" id="assignment" th:field="${courses.assignment}"/>
             </div>
 
             <div class="form-group">
@@ -36,7 +36,7 @@
 
             <div class="form-group">
                 <label for="content">Assignment Due Date</label>
-                <textarea class="form-control" id="date" th:field="${courses.dueDate}"></textarea>
+                <input type="text" class="form-control" id="date" th:field="${courses.dueDate}"/>
             </div>
 
             <button type="submit" class="btn btn-primary">Save</button>

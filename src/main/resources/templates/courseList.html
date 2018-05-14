@@ -10,10 +10,10 @@
 
     <div class="container">
 
-        <h1>Courses</h1>
+        <h1>Course/Assignment List</h1>
 
         <p>
-            <a href="/courseEdit" th:href="@{/courseEdit}">Create</a>
+            <a href="/courseEdit" th:href="@{/courseEdit}">Add a new assignment</a>
         </p>
 
         <table class="table">
@@ -30,14 +30,15 @@
             </thead>
             <tbody>
             <tr th:each="courses : ${courseList}">
-                <td th:text="${course.id}"></td>
-                <td th:text="${course.name}"></td>
-                <td th:text="${course.instructor}"></td>
-                <td th:text="${course.assignment}"></td>
-                <td th:text="${course.description}"></td>
-                <td th:text="${course.dueDate}"></td>
+                <td th:text="${courses.id}"></td>
+                <td th:text="${courses.name}"></td>
+                <td th:text="${courses.instructor}"></td>
+                <td th:text="${courses.assignment}"></td>
+                <td th:text="${courses.description}"></td>
+                <td th:text="${courses.dueDate}"></td>
                 <td>
-                    <a href="/courseEdit/" th:href="@{/courseEdit/__${course.id}__}">Edit</a>
+                    <a href="/courseEdit/{id}" th:href="@{/courseEdit/__${course.id}__}">Edit</a>
+                    <br>
                     <a href="/courseDelete/" th:href="@{/courseDelete/__${course.id}__}">Delete</a>
                 </td>
             </tr>

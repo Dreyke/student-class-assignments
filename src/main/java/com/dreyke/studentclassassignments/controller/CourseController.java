@@ -13,12 +13,15 @@ public class CourseController {
     @Autowired
     private CoursesService coursesService;
 
+    // uses findAll method to retrieve list of existing course objects from database
+    // and pushes into the ModelMap
     @RequestMapping(value = "/")
     public String courseList(ModelMap model) {
         model.addAttribute("courseList", coursesService.findAll());
         return "courseList";
     }
 
+    // populates form to create or edit a course object
     @RequestMapping(value={"/courseEdit", "/courseEdit/{id}"}, method = RequestMethod.GET)
     public String courseEditForm(ModelMap model, @PathVariable(required = false, name = "id") Long id) {
         if (null != id) {
@@ -29,6 +32,7 @@ public class CourseController {
         return "courseEdit";
     }
 
+    // method is invoked when form is being submitted.
     @RequestMapping(value="/courseEdit", method = RequestMethod.POST)
     public String courseEdit(ModelMap model, Course course) {
         coursesService.saveCourse(course);

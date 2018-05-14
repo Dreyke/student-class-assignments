@@ -9,6 +9,7 @@ import com.dreyke.studentclassassignments.controller.CourseRepository;
 import java.util.List;
 import java.util.Optional;
 
+// implements the CoursesService class
 @Service("coursesService")
 public class CoursesServiceImpl implements CoursesService {
 

@@ -17,6 +17,7 @@ public class Course {
     private String description;
     private Date dueDate;
 
+    // empty constructor
     public Course() { }
 
     public Course(String name, String instructor, String assignment, String description, Date dueDate) {
@@ -27,6 +28,7 @@ public class Course {
         this.dueDate = dueDate;
     }
 
+    // variable get/setters
     public Long getId() {
         return id;
     }
