@@ -13,14 +13,32 @@
 
         <form class="form-group" action="/courseEdit" th:action="@{/courseEdit}" method="post">
             <input th:type="hidden" name="id" th:field="${courses.id}" />
+
             <div class="form-group">
                 <label for="title">Course Name</label>
                 <input type="text" class="form-control" id="title" th:field="${courses.name}" />
             </div>
+
+            <div class="form-group">
+                <label for="content">Instructor</label>
+                <textarea class="form-control" id="instructor" th:field="${courses.instructor}"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Assignment</label>
+                <textarea class="form-control" id="assignment" th:field="${courses.assignment}"></textarea>
+            </div>
+
             <div class="form-group">
                 <label for="content">Description</label>
                 <textarea class="form-control" id="content" th:field="${courses.description}"></textarea>
             </div>
+
+            <div class="form-group">
+                <label for="content">Assignment Due Date</label>
+                <textarea class="form-control" id="date" th:field="${courses.dueDate}"></textarea>
+            </div>
+
             <button type="submit" class="btn btn-primary">Save</button>
             <a href="#" th:href="@{/}" class="btn btn-danger" role="button">Cancel</a>
         </form>
