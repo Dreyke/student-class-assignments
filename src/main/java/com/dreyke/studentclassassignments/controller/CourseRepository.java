@@ -6,9 +6,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.dreyke.studentclassassignments.controller.Course;
+import org.springframework.transaction.annotation.Transactional;
+
 
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Long> {
+    @Transactional
     @Modifying
     @Query("delete from Course where id = :id")
     void delete(Long id);
