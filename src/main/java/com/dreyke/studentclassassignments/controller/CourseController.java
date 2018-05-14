@@ -22,7 +22,7 @@ public class CourseController {
     @RequestMapping(value={"/courseEdit", "/courseEdit/{id}"}, method = RequestMethod.GET)
     public String courseEditForm(Model model, @PathVariable(required = false, name="id") Long id) {
         if (null != id) {
-            model.addAttribute("courses", coursesService.findOne(id));
+            model.addAttribute("courses", coursesService.findById(id));
         } else {
             model.addAttribute("courses", new Course());
         }

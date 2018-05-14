@@ -24,7 +24,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="courses : $(courseList)">
+            <tr th:each="courses : ${courseList}">
                 <td th:text="${course.id}">1</td>
                 <td th:text="${course.name}">Test</td>
                 <td>

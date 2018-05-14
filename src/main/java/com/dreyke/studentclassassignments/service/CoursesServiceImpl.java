@@ -7,8 +7,9 @@ import org.springframework.stereotype.Service;
 import com.dreyke.studentclassassignments.controller.CourseRepository;
 
 import java.util.List;
+import java.util.Optional;
 
-@Service
+@Service("coursesService")
 public class CoursesServiceImpl implements CoursesService {
 
     @Autowired
@@ -20,8 +21,8 @@ public class CoursesServiceImpl implements CoursesService {
     }
 
     @Override
-    public Course findOne(Long id) {
-        return courseRepository.findOne(id);
+    public Optional<Course> findById(Long id) {
+        return courseRepository.findById(id);
     }
 
     @Override
