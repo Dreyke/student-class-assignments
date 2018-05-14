@@ -21,16 +21,18 @@
             <tr>
                 <th>ID</th>
                 <th>Course Name</th>
+                <th>Course Description</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="courses : ${courseList}">
-                <td th:text="${course.id}">1</td>
-                <td th:text="${course.name}">Test</td>
+                <td th:text="${course.id}"></td>
+                <td th:text="${course.name}"></td>
+                <td th:text="${course.description}"></td>
                 <td>
-                    <a href="/courseEdit/1" th:href="@{/courseEdit/__${course.id}__}">Edit</a>
-                    <a href="/courseDelete/1" th:href="@{/courseDelete/__${course.id}__}">Delete</a>
+                    <a href="/courseEdit/" th:href="@{/courseEdit/__${course.id}__}">Edit</a>
+                    <a href="/courseDelete/" th:href="@{/courseDelete/__${course.id}__}">Delete</a>
                 </td>
             </tr>
             </tbody>
