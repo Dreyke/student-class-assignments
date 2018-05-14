@@ -37,9 +37,9 @@
                 <td th:text="${courses.description}"></td>
                 <td th:text="${courses.dueDate}"></td>
                 <td>
-                    <a href="/courseEdit/{id}" th:href="@{/courseEdit/__${course.id}__}">Edit</a>
+                    <a href="/courseEdit/" th:href="@{/courseEdit/__${courses.id}__}">Edit</a>
                     <br>
-                    <a href="/courseDelete/" th:href="@{/courseDelete/__${course.id}__}">Delete</a>
+                    <a href="/courseDelete/" th:href="@{/courseDelete/__${courses.id}__}">Delete</a>
                 </td>
             </tr>
             </tbody>

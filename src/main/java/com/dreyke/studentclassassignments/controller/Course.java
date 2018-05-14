@@ -15,12 +15,12 @@ public class Course {
     private String instructor;
     private String assignment;
     private String description;
-    private Date dueDate;
+    private String dueDate;
 
     // empty constructor
     public Course() { }
 
-    public Course(String name, String instructor, String assignment, String description, Date dueDate) {
+    public Course(String name, String instructor, String assignment, String description, String dueDate) {
         this.name = name;
         this.instructor = instructor;
         this.assignment = assignment;
@@ -69,11 +69,11 @@ public class Course {
         this.description = description;
     }
 
-    public Date getDueDate() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(Date dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 }
