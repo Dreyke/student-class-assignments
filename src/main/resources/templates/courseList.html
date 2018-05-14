@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Courses</title>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" />
 </head>
 <body>
 
@@ -28,8 +29,8 @@
                 <td th:text="${course.id}">1</td>
                 <td th:text="${course.name}">Test</td>
                 <td>
-                    <a href="/courseEdit/1" th:href="@{/courseEdit/__${notes.id}__}">Edit</a>
-                    <a href="/courseDelete/1" th:href="@{/courseDelete/__${notes.id}__}">Delete</a>
+                    <a href="/courseEdit/1" th:href="@{/courseEdit/__${course.id}__}">Edit</a>
+                    <a href="/courseDelete/1" th:href="@{/courseDelete/__${course.id}__}">Delete</a>
                 </td>
             </tr>
             </tbody>

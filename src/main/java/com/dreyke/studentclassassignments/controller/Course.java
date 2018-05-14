@@ -7,6 +7,7 @@ import java.util.Date;
 @Entity
 public class Course {
 
+    @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
